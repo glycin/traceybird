@@ -21,7 +21,7 @@ const gravity = 1000;
 const jumpStrength = -500;
 
 const obstacleWidth = 50;
-const obstacleGap = 200;
+const obstacleGap = 300;
 const obstacleSpeed = 200
 let obstacles = [];
 
