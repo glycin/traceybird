@@ -22,10 +22,7 @@ const jumpStrength = -500;
 
 const obstacleWidth = 50;
 const obstacleGap = 200;
-const baseObstacleSpeed = 2;
-const speedMultiplier = window.innerWidth < 600 ? 0.8 : 1;
-
-const obstacleSpeed = baseObstacleSpeed * speedMultiplier;
+const obstacleSpeed = 200
 let obstacles = [];
 
 let score = 0;
@@ -114,7 +111,7 @@ function gameLoop(currentTime) {
     const birdHeight = 100;
     ctx.drawImage(currentBirdImage, birdX - birdWidth / 2, birdY - birdHeight / 2, birdWidth, birdHeight);
 
-    updateObstacles();
+    updateObstacles(deltaTime);
 
     if (checkCollision()) {
         resetGame();
@@ -161,9 +158,9 @@ function spawnObstacle() {
     });
 }
 
-function updateObstacles() {
+function updateObstacles(deltaTime) {
     obstacles.forEach((obstacle, index) => {
-        obstacle.x -= obstacleSpeed;
+        obstacle.x -= obstacleSpeed * (deltaTime / 1000);
 
         const imageWidth = obstacleWidth;
         const topObstacleHeight = obstacle.y;
@@ -173,7 +170,7 @@ function updateObstacles() {
         drawRepeatingImage(ctx, serverRackImage, obstacle.x, obstacle.y + obstacleGap, imageWidth, bottomObstacleHeight);
         obstacle.flames.forEach((fire) => {
             fire.update();
-            fire.x -= obstacleSpeed;
+            fire.x -=  obstacleSpeed * (deltaTime / 1000);
             fire.draw(ctx);
         });
 
