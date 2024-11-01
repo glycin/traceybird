@@ -21,7 +21,7 @@ let playerName = "";
 let birdX, birdY;
 let birdVelocity = 0.0;
 const gravity = 1000;
-const jumpStrength = -100;
+const jumpStrength = -500;
 
 // Obstacle variables
 const obstacleWidth = 50;
