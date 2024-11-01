@@ -1,0 +1,64 @@
+/* styles.css */
+
+@font-face {
+    font-family: 'dogicabold';
+    src: url('art/dogicabold.ttf') format('truetype');
+}
+
+body {
+    font-family: 'CustomFont', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2e2e2e;
+    font-family: Arial, sans-serif;
+  }
+  
+  canvas {
+    display: none; /* Hide the game canvas until the game starts */
+  }
+  
+  /* Menu overlay styling */
+  #menu {
+    position: absolute;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  #menu h1 {
+    margin-top: 0;
+    font-size: 2em;
+  }
+  
+  #menu input {
+    padding: 10px;
+    font-size: 1em;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: none;
+  }
+  
+  #menu button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: #4b9141;
+    color: white;
+  }
+  
+  #menu button:hover {
+    background-color: #0c8d00;
+  }
+  
